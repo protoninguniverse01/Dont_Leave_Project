@@ -8,12 +8,19 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// ✅ Ensure 'uploads/' folder exists
+const uploadDir = path.join(__dirname, "uploads");
+if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir);
+}
+
+// Middleware
 app.use(cors());
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+app.use("/uploads", express.static(uploadDir));
 
 // Multer config
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => cb(null, "uploads/"),
+    destination: (req, file, cb) => cb(null, uploadDir),
     filename: (req, file, cb) =>
         cb(null, Date.now() + path.extname(file.originalname)),
 });
@@ -30,7 +37,7 @@ app.post("/upload", upload.single("video"), (req, res) => {
 
 // Fetch uploaded videos
 app.get("/videos", (req, res) => {
-    fs.readdir("uploads/", (err, files) => {
+    fs.readdir(uploadDir, (err, files) => {
         if (err) {
             console.error(err);
             return res.status(500).send("Could not list videos.");
@@ -40,7 +47,7 @@ app.get("/videos", (req, res) => {
     });
 });
 
+// Start server
 app.listen(PORT, () => {
     console.log(`Server running on ${PORT}`);
 });
-
