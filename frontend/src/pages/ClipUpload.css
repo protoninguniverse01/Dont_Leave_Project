@@ -1,0 +1,32 @@
+.upload-form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.upload-form input[type="file"] {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  background: white;
+  border-radius: 5px;
+  padding: 5px;
+  z-index: 2;
+}
+
+.upload-form button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #28a745;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 2;
+}
+
+.upload-form button:hover {
+  background-color: #218838;
+}

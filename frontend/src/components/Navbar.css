@@ -1,0 +1,100 @@
+/* Navbar.css – updated */
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  background: transparent;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 10px white;
+}
+
+/* Hamburger */
+.hamburger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.hamburger div {
+  background-color: white;
+  height: 3px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px white;
+}
+
+/* Nav menu */
+.nav-links {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 180px;
+  box-shadow: 0 0 15px white;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: blue;
+  text-shadow: 0 0 8px blue;
+}
+
+/* Only show when nav is open */
+.nav-active {
+  display: flex;
+}
+
+/* Hamburger animation */
+.toggle div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+.toggle div:nth-child(2) {
+  opacity: 0;
+}
+.toggle div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* Smooth entrance */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

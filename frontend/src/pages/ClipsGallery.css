@@ -1,0 +1,65 @@
+.clip-gallery {
+  background: linear-gradient(to bottom, #0b0b0b, #1e3d1f);
+  min-height: 100vh;
+  width: 100vw;
+  padding: 60px 20px;
+  color: white;
+  text-align: center;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.clip-gallery h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #a7ff6b;
+}
+
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.video-card {
+  width: 300px;
+  max-width: 90vw;
+  background: #111;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(167, 255, 107, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.video-card video {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #a7ff6b;
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.video-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(167, 255, 107, 0.6);
+}
+
+.fade-in {
+  animation: fadeUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

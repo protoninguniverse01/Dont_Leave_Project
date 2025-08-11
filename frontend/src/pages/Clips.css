@@ -1,0 +1,13 @@
+/* src/pages/Clips.css */
+.clips-page {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #0a0a0a, #101010);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.clips-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
