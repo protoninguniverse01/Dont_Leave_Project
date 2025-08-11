@@ -8,7 +8,7 @@ export default function ClipGallery() {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/videos");
+        const res = await axios.get("https://dont-leave-project.onrender.com/videos");
         setVideos(res.data);
       } catch (err) {
         console.error("Error fetching videos:", err);
@@ -24,7 +24,7 @@ export default function ClipGallery() {
       <div className="video-grid">
         {videos.map((video, index) => (
           <div className="video-card fade-in" key={index}>
-            <video controls src={`http://localhost:5000${video}`} />
+            <video controls src={`https://dont-leave-project.onrender.com${video}`} />
           </div>
         ))}
       </div>

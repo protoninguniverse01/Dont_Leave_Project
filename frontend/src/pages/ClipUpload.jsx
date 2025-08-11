@@ -19,7 +19,7 @@ const ClipUpload = () => {
 
         try {
             setUploading(true);
-            await axios.post("http://localhost:5000/upload", formData, {
+            await axios.post("https://dont-leave-project.onrender.com/upload", formData, {
                 headers: { "Content-Type": "multipart/form-data" }
             });
             alert("Video uploaded successfully!");
