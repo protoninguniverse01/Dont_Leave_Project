@@ -29,30 +29,7 @@ export default function ClipGallery() {
             <video controls src={`https://dont-leave-project.onrender.com${video}`} />
           </div>
         ))}
-        {videos.map((video, index) => {
-    const filename = video.split("/").pop(); // extract just the filename
-    return (
-        <div className="video-card fade-in" key={index}>
-            <video controls src={`https://dont-leave-project.onrender.com${video}`} />
-            <button
-                className="delete-btn"
-                onClick={async () => {
-                    try {
-                        await axios.delete(`https://dont-leave-project.onrender.com/delete/${filename}`);
-                        alert("Video deleted successfully");
-                        window.location.reload(); // reload to update list
-                    } catch (err) {
-                        console.error("Failed to delete video:", err);
-                        alert("Delete failed");
-                    }
-                }}
-            >
-                Delete
-            </button>
-        </div>
-    );
-})}
-
+        
       </div>
     </div>
   );
