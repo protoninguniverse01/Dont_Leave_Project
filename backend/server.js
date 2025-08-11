@@ -47,6 +47,20 @@ app.get("/videos", (req, res) => {
     });
 });
 
+// Delete video endpoint
+app.delete("/delete/:filename", (req, res) => {
+    const filename = req.params.filename;
+    const filePath = path.join(__dirname, "uploads", filename);
+
+    fs.unlink(filePath, err => {
+        if (err) {
+            console.error("Error deleting file:", err);
+            return res.status(500).send("Failed to delete file.");
+        }
+        res.send({ message: "File deleted successfully." });
+    });
+});
+
 // Start server
 app.listen(PORT, () => {
     console.log(`Server running on ${PORT}`);
