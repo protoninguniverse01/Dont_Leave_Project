@@ -37,7 +37,7 @@ export default function ClipGallery() {
         {videos.map((video, index) => (
           <div className="video-card fade-in" key={index}>
             <video controls src={`https://dont-leave-project.onrender.com${video}`} />
-            <button className="delete-btn" onClick={() => handleDelete(video)}>Delete</button>
+            <button className="delete-btn" onClick={() => handleDelete(video)}>🗑️ Delete</button>
           </div>
         ))}
       </div>
