@@ -53,6 +53,22 @@
   opacity: 0;
 }
 
+.delete-btn {
+  margin-top: 10px;
+  background-color: #ff4c4c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #d63434;
+}
+
+
 @keyframes fadeUp {
   0% {
     opacity: 0;
